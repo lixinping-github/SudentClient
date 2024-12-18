@@ -1,8 +1,8 @@
 <template>
     <div class="maininput">
         <div><span>用户名:</span><input class="inputstyle" placeholder="请输入用户名" v-model="username" /></div>
-        <div><span>密&nbsp;&nbsp;&nbsp;码:</span><input placeholder="请输入密码" class="inputstyle" v-model="password" /></div>
-        <el-button ref="entryweb" class="entryweb"v-enter=" submit"  v-on:click=" denglu($event)" type="primary">点击登录</el-button>
+        <div><span>密&nbsp;&nbsp;&nbsp;码:</span><input placeholder="请输入密码" v-enter=" denglu"  class="inputstyle" v-model="password" /></div>
+        <el-button ref="entryweb" class="entryweb"  v-on:click=" denglu($event)" type="primary">点击登录</el-button>
     </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     enter: {
       bind(el, binding) {
         el.addEventListener('keyup', (event) => {
-          if (event.keyCode === 13) {
+          if (event.keyCode === 1) {
             binding.value();
           }
         });
