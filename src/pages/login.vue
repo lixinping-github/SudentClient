@@ -2,11 +2,20 @@
     <div class="maininput">
         <div><span>用户名:</span><input class="inputstyle" placeholder="请输入用户名" v-model="username" /></div>
         <div><span>密&nbsp;&nbsp;&nbsp;码:</span><input placeholder="请输入密码" class="inputstyle" v-model="password" /></div>
-        <el-button ref="entryweb" class="entryweb" @click="denglu($event)" type="primary">点击登录</el-button>
+        <el-button ref="entryweb" class="entryweb"v-enter=" submit"  v-on:click=" denglu($event)" type="primary">点击登录</el-button>
     </div>
 </template>
 
 <script>
+let elbutton=document.querySelector("el-button");
+
+// document.addEventListener('keydown', function(event) {
+//     if (event.key === 'Enter') {
+//         // 在这里执行回车键被按下时的操作
+//         console.log('Enter 键被按下了');
+//     }
+// });
+ 
 export default {
     name: "login",
     data() {
@@ -15,7 +24,24 @@ export default {
             password: ""
         }
     },
+    directives: {
+    enter: {
+      bind(el, binding) {
+        el.addEventListener('keyup', (event) => {
+          if (event.keyCode === 13) {
+            binding.value();
+          }
+        });
+      },
+    },
+  },
+
+                        
+
     methods: {
+        submit:function(){
+    console.log(123)
+                        },
         denglu($event) {   //这个是登录的时候，我们要做的事情
             
             this.$store.dispatch("entry", { userid: this.username.trim(), password: this.password.trim() })//调用仓库的方法action
