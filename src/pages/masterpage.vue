@@ -1,9 +1,9 @@
 <template>
     <div class="maininfo">
    
-    <el-container style="height: 400px; border: 1px solid #eee">
+    <el-container>
         
-        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+        <el-aside width="200px"  style="background-color: rgb(238, 241, 246)">
             <el-menu :default-openeds="['1', '3']">
                 <el-submenu index="1">
                     <template slot="title"><i class="el-icon-message"></i>学生信息管理系统</template>
@@ -20,7 +20,7 @@
                     <template slot="title"><i class="el-icon-message"></i>成绩系统</template>
                     <el-menu-item-group>
                         <el-menu-item index="1-1">查看学生成绩</el-menu-item>
-                        <el-menu-item index="1-2">进行学生成绩注入</el-menu-item>
+                        <el-menu-item index="1-2">输入学生成绩</el-menu-item>
                         <el-menu-item @click="Readme" index="1-3">项目自述</el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
@@ -105,7 +105,6 @@ export default {
 
 .maininfo{
     width:70%;
-    margin: 0px auto;
 }
 .mainsystem {
     overflow: auto;
