@@ -3,7 +3,6 @@
         <div><span>用户名:</span><input class="inputstyle" placeholder="请输入用户名" v-model="username" /></div>
         <div><span>密&nbsp;&nbsp;&nbsp;码:</span><input placeholder="请输入密码" class="inputstyle" v-model="password" /></div>
         <el-button ref="entryweb" class="entryweb" @click="denglu($event)" type="primary">点击登录</el-button>
-        
     </div>
 </template>
 
@@ -37,7 +36,8 @@ export default {
 <style scoped>
 
 .maininput {
-    width: 300px;
+    position: relative;
+    width: 328px;
     height: 400px;
     position: absolute;
     top: 0px;
@@ -48,10 +48,14 @@ export default {
    
 }
 span{
+    color: rgb(218, 223, 228);
     font-size: 18px;
     font-weight: bold;
+    font-family: PingFangSC-Regular, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", verdana, sans-serif, Simsun, STXihei;
+    margin-right: 2em;
 }
 .inputstyle{
+    
     font-size: 18px;
     font-weight: bold;
     outline: none;
@@ -72,7 +76,8 @@ inputstyle:hover{
     margin-top: 20px;
 }
 .entryweb{
-    margin-left: 190px;
+    position: absolute;
+    right: 5px;
     margin-top:10px
 }
 
