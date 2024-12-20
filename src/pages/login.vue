@@ -2,7 +2,7 @@
     <div class="maininput">
         <div><span>用户名:</span><input class="inputstyle" placeholder="请输入用户名" v-model="username" /></div>
         <div><span>密&nbsp;&nbsp;&nbsp;码:</span><input placeholder="请输入密码" v-enter=" denglu"  class="inputstyle" v-model="password" /></div>
-        <el-button ref="entryweb" class="entryweb"  v-on:click=" denglu($event)" type="primary">点击登录</el-button>
+        <el-button ref="entryweb" class="entryweb"  v-on:click=" denglu($event)" type="primary">点击登录</el-button> 
     </div>
 </template>
 
