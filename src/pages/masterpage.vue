@@ -9,10 +9,12 @@
                 <el-submenu index="1">
                     <template slot="title"><i class="el-icon-message"></i>学生信息管理系统</template>
                     <el-menu-item-group>
-                        <template slot="title">查看个人信息</template>
+                        <template slot="title"></template>
                         <el-menu-item @click="GetStudentinformation" index="1-1">查看所有学生信息</el-menu-item>
+                        
                         <el-menu-item @click="Addstu" index="1-2" >添加学生信息</el-menu-item>
-                        <el-menu-item index="1-3" @click="Leave">登出</el-menu-item>
+                        <el-menu-item @click="updateStu" index="1-3" >修改自己的信息</el-menu-item>
+                        <el-menu-item index="1-4" @click="Leave">登出</el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
             </el-menu>
@@ -62,7 +64,12 @@ export default {
              name:'addstudentinfo'   
             })
         },
-
+        updateStu(){
+            this.$refs.banner.style.display="none";
+            this.$router.push({
+             name:'update'   
+            })
+        },
        
 
         GetStudentinformation() {//写一个方法，此方法用于获取学生信息，并且发送token

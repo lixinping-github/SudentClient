@@ -6,7 +6,7 @@ import tableinfo from '../pages/tableinfo.vue';
 import addstudentinfo from '../pages/addstudentinfo.vue';
 import readme from '../pages/readme.vue';
 import entrying from '../pages/entrying.vue';
-
+import update from "../pages/update.vue"
 
 Vue.use(VueRouter);
 const router= new VueRouter({
@@ -29,13 +29,28 @@ const router= new VueRouter({
                 {
                     name:"addstudentinfo",
                     path:"addstudentinfo",
-                    component:addstudentinfo
+                    component:addstudentinfo,
+                children:[
+                    {
+                    name:"update",
+                    path:"update",
+                    component:update 
+                    }
+                ]
+
                 },
                 {
                     name:"readme",
                     path:"readme",
                     component:readme 
+                },
+                {
+                    name:"update",
+                    path:"update",
+                    component:update 
                 }
+
+
             ]
         },
         {

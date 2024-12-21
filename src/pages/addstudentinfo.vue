@@ -31,6 +31,7 @@ export default {
         }
     },
     methods: {
+       
         addstudentinformation() {//向服务器发送token
             axios.interceptors.request.use(function (config) {
                 config.headers["Authorization"] = `Bearer ${sessionStorage.getItem("useridentity")}`;

@@ -21,7 +21,9 @@
                     <td>{{ studata.age }}</td>
                     <td>{{ studata.gender }}</td>
                     <td>{{ studata.phone }}</td>
-                    <td><button v-on:click="deleted(studata.userid, studata.name)">删除</button></td>
+                    <td><button v-on:click="deleted(studata.userid, studata.name)">删除</button>
+                        <button @click="updateStu">修改</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -38,6 +40,12 @@ export default {
         //这一步操作暂时不做
     },
     methods: {
+        updateStu(){
+            this.$refs.banner.style.display="none";
+            this.$router.push({
+             name:'update'   
+            })
+        },
         deleted(userid, names) {
             console.log(userid, names)
             if (confirm(`是否删除用户--${names}`)) {
@@ -88,7 +96,10 @@ button {
     border: none;
 
 }
-
+button:nth-child(2){
+    margin-left: 10px;
+    background-color: #243894;
+}
 /*设置按钮样式*/
 button:active {
     background-color: rgb(238, 14, 14);
