@@ -31,7 +31,7 @@
         </el-aside>
         <div class="mainsystem">
             
-            <div ref="banner" class="span-before-alert">学生信息管理系统——李新平制作</div>
+            <div ref="banner" class="span-before-alert">学生信息管理系统</div>
             <router-view></router-view>
         </div>
     </el-container>
